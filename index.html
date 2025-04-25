@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>InstaGold_v9.80</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://static.mediafire.com/favicon.ico" type="image/x-icon">
+
+  <!-- Meta tags الأساسية -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="description" content="InstaGold_v9.80 is a modified Instagram app with features like downloading photos, hiding online status, and more."/>
+  <meta name="keywords" content="Instagram Plus, InstaGold, modified Instagram"/>
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="GoldFire"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://instagold.ogwhats.me"/>
+  <meta property="og:title" content="InstaGold_v9.80"/>
+  <meta property="og:description" content="Download InstaGold_v9.80 – A powerful modified Instagram with unique features."/>
+  <meta property="og:image" content="https://wazaps.net/wp-content/uploads/2024/03/zip.jpg"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@GoldFire"/>
+  <meta name="twitter:title" content="InstaGold_v9.80"/>
+  <meta name="twitter:description" content="Download InstaGold_v9.80 – A powerful modified Instagram with unique features."/>
+  <meta name="twitter:image" content="https://wazaps.net/wp-content/uploads/2024/03/zip.jpg"/>
+  <meta name="twitter:url" content="https://instagold.ogwhats.me"/>
+
+  <!-- Google -->
+  <meta itemprop="name" content="InstaGold_v9.80"/>
+  <meta itemprop="description" content="Download InstaGold_v9.80 – A powerful modified Instagram with unique features."/>
+  <meta itemprop="image" content="https://wazaps.net/wp-content/uploads/2024/03/zip.jpg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1320236557446808"
+     crossorigin="anonymous"></script>
+  
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M76DRG3CWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M76DRG3CWG');
+</script>
+
+
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #222;
+      background: #f9f9f9;
+    }
+    .header { background: #ffcc00; text-align: center; padding: 20px; }
+    h1 { font-size: 22px; font-weight: 800; margin-bottom: 5px; }
+    .content {
+      max-width: 600px; margin: 30px auto; background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .lang { display: none; }
+    .app-logo { width: 120px; height: 120px; margin-bottom: 20px; }
+    .download-btn {
+      display: block; margin: 20px auto;
+      background: linear-gradient(to left, #28a745, #218838);
+      color: white; padding: 14px 28px; font-size: 17px; font-weight: bold;
+      text-align: center; border: none; border-radius: 50px;
+      cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease; width: fit-content; min-width: 180px;
+    }
+    .download-btn:hover {
+      background: linear-gradient(to left, #218838, #1e7e34);
+    }
+    .countdown-box {
+      background: linear-gradient(135deg, #ffd700, #ffcc00);
+      padding: 15px; margin-top: 20px; border-radius: 12px;
+      font-size: 20px; font-weight: 700; text-align: center;
+      color: #222; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: none;
+    }
+    .footer { text-align: center; padding: 20px; font-size: 14px; background: #f1f1f1; margin-top: 40px; }
+  </style>
+  <script>
+    let lang = 'ar';
+    function setLanguage(selectedLang) {
+      lang = selectedLang;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
+      setLanguage(userLang);
+    });
+
+    function startCountdown() {
+      var counter = 6;
+      var countdownBox = document.getElementById("countdownBox");
+      var startBtn = document.getElementById("startBtn");
+      var downloadBtn = document.getElementById("downloadNowBtn");
+
+      startBtn.style.display = "none";
+      countdownBox.style.display = "block";
+      countdownBox.innerText = lang === "ar"
+        ? "⏳ يرجى الانتظار " + counter + " ثانية..."
+        : "⏳ Please wait " + counter + " seconds...";
+
+      var interval = setInterval(function () {
+        counter--;
+        countdownBox.innerText = lang === "ar"
+          ? "⏳ يرجى الانتظار " + counter + " ثانية..."
+          : "⏳ Please wait " + counter + " seconds...";
+
+        if (counter === 0) {
+          clearInterval(interval);
+          countdownBox.style.display = "none";
+          downloadBtn.style.display = "inline-block";
+        }
+      }, 1000);
+    }
+  </script>
+</head>
+<body>
+
+  <div style="text-align:center; margin-top:20px;">
+    <button onclick="setLanguage('ar')">🇸🇦 عربي</button>
+    <button onclick="setLanguage('en')">🇺🇸 English</button>
+  </div>
+
+  <header class="header">
+    <h1 data-lang="ar" class="lang">تحميل انستقرام الذهبي</h1>
+    <h1 data-lang="en" class="lang">Download InstaGold Gold</h1>
+    <p data-lang="ar" class="lang">نسخة محدثة وآمنة | برابط مباشر</p>
+    <p data-lang="en" class="lang">Latest version | Safe & Direct Download</p>
+  </header>
+
+  <main class="content">
+    <div class="app-info" style="text-align: center;">
+      <img src="instagold.png" alt="InstaGold" class="app-logo" />
+      <p data-lang="ar" class="lang">انستا الذهبي أو ما يعرف أيضًا باسم Instagram Plus هو نسخة معدلة من تطبيق إنستجرام الرسمي، تهدف إلى إضافة ميزات جديدة غير موجودة في التطبيق الأساسي. تعد هذه النسخة المفضلة للعديد من المستخدمين الذين يبحثون عن مزايا إضافية مثل تنزيل الصور والفيديوهات، إخفاء الظهور، وتخصيص واجهة التطبيق</p>
+      <p data-lang="en" class="lang">Instagram Gold, also known as Instagram Plus, is a modified version of the official Instagram app. It is designed to add new features that are not available in the original version. This version is preferred by many users who are looking for extra functionalities such as downloading photos and videos, hiding online status, and customizing the app’s interface.</p>
+
+
+      <button onclick="startCountdown()" id="startBtn" class="download-btn">⬇️ Start Download</button>
+
+
+      <div id="countdownBox" class="countdown-box"></div>
+
+
+      <a href="https://dlll.apkm.app/insta/9.80F/InstaGold_v9.80F.apk" id="downloadNowBtn" class="download-btn" style="display: none;">Download Now ⬇️</a>
+    </div>
+
+    <div class="adsense-box" style="margin-top: 30px; text-align: center; min-height: 100px;">
+  <!-- instagold -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1320236557446808"
+       data-ad-slot="5634142036"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+  </main>
+
+  <footer class="footer">
+  <p>© 2025 جميع الحقوق محفوظة</p>
+  <nav class="footer-links">
+    <a href="/privacy-policy.html">سياسة الخصوصية</a> |
+    <a href="/terms.html">شروط الاستخدام</a> |
+    <a href="/about.html">من نحن</a>
+  </nav>
+  <p style="font-size: 13px; color: gray; margin-top: 10px;">
+    نحن لا نستضيف أي ملف على خوادمنا. جميع الروابط يتم توجيهها من مصادر خارجية موثوقة.
+  </p>
+</footer>
+
+
+</body>
+</html>
