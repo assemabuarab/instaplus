@@ -1170,42 +1170,16 @@
       // تعيين اللغة التلقائي
       const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
       setLanguage(userLang);
-      
-      // تحميل إعلانات أدسنس بعد تحميل الصفحة
-      setTimeout(() => {
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-          console.log('Error loading ads:', e);
-        }
-      }, 2000);
-      
-      // إصلاح محاذاة الإعلانات بعد التحميل
-      setTimeout(fixAdAlignment, 2500);
     });
 
     let lang = 'ar';
     function setLanguage(selectedLang) {
       lang = selectedLang;
-      
-      // تحديث كل العناصر بلغة واحدة
       document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'inline-block' : 'none';
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
       });
-      
-      // تحديث direction و lang للصفحة
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
-      
-      // تحديث تسميات الإعلانات
-      updateAdLabels();
-    }
-    
-    // دالة لتحديث تسميات الإعلانات
-    function updateAdLabels() {
-      document.querySelectorAll('.ads-label').forEach(label => {
-        label.style.display = label.getAttribute('data-lang') === lang ? 'block' : 'none';
-      });
     }
 
     function startCountdown() {
@@ -1229,101 +1203,10 @@
           clearInterval(interval);
           countdownBox.style.display = "none";
           finalBtn.style.display = "flex";
+          finalBtn.classList.add("animate__animated", "animate__pulse");
         }
       }, 1000);
     }
-    
-    // دالة لإصلاح محاذاة إعلانات أدسنس
-    function fixAdAlignment() {
-      const isMobile = window.innerWidth <= 768;
-      
-      // إصلاح محاذاة جميع الإعلانات
-      document.querySelectorAll('.ad-container ins').forEach(ad => {
-        // تطبيق الأنماط الأساسية
-        ad.style.margin = '0 auto';
-        ad.style.display = 'block';
-        ad.style.textAlign = 'center';
-        
-        // تعديل الحجم للجوال
-        if (isMobile) {
-          const container = ad.closest('.ad-container');
-          if (container) {
-            // تحديد حجم الإعلان بناءً على مكانه
-            if (container.closest('.ads-header') || container.closest('.ads-footer')) {
-              ad.style.width = '320px';
-              ad.style.height = '50px';
-            } else if (container.closest('.ads-inline')) {
-              ad.style.width = '300px';
-              ad.style.height = '250px';
-            } else if (container.closest('.ads-mobile')) {
-              ad.style.width = '320px';
-              ad.style.height = '50px';
-            }
-          }
-        }
-      });
-      
-      // التحكم في عرض إعلان الجوال
-      const mobileAds = document.querySelector('.ads-mobile');
-      if (mobileAds) {
-        mobileAds.style.display = isMobile ? 'block' : 'none';
-      }
-      
-      // إضافة padding إضافي للإعلانات على الجوال لتحسين المحاذاة
-      if (isMobile) {
-        document.querySelectorAll('.ads-inline, .ads-header, .ads-footer').forEach(adContainer => {
-          adContainer.style.padding = '0 10px';
-        });
-      }
-    }
-    
-    // دالة لاكتشاف حجم الشاشة
-    function detectScreenSize() {
-      fixAdAlignment(); // نستدعي نفس الدالة
-    }
-    
-    // تشغيل الدوال عند الأحداث
-    window.addEventListener('load', () => {
-      // تأخير بسيط لضمان تحميل الإعلانات
-      setTimeout(fixAdAlignment, 1000);
-    });
-    
-    window.addEventListener('resize', detectScreenSize);
-    
-    // تشغيل إضافي بعد 3 ثوان للتأكد
-    setTimeout(fixAdAlignment, 3000);
-    
-    // حل خاص لمشكلة محاذاة أدسنس النهائي
-    function finalAdFix() {
-      // إعادة تطبيق الأنماط بعد فترة للتأكد
-      document.querySelectorAll('.ad-container').forEach(container => {
-        container.style.textAlign = 'center';
-        
-        const ad = container.querySelector('ins');
-        if (ad) {
-          ad.style.margin = '0 auto';
-          ad.style.display = 'block';
-          
-          // إذا كان الإعلان محملاً بالفعل
-          if (ad.offsetHeight > 0) {
-            // مركزة الإعلان داخل الحاوية
-            const containerWidth = container.offsetWidth;
-            const adWidth = ad.offsetWidth;
-            
-            if (adWidth > 0) {
-              const marginLeft = (containerWidth - adWidth) / 2;
-              ad.style.marginLeft = `${marginLeft}px`;
-              ad.style.marginRight = `${marginLeft}px`;
-            }
-          }
-        }
-      });
-    }
-    
-    // تشغيل الحل النهائي عدة مرات للتأكد
-    [4000, 6000, 10000].forEach(time => {
-      setTimeout(finalAdFix, time);
-    });
   </script>
 </body>
 </html>
