@@ -1058,6 +1058,9 @@
       // تعيين اللغة التلقائي
       const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
       setLanguage(userLang);
+      
+      // بدء العد التنازلي تلقائياً
+      startCountdown();
     });
 
     let lang = 'ar';
@@ -1071,7 +1074,6 @@
     }
 
     function startCountdown() {
-      document.getElementById("fileInfoBox").style.display = "none";
       var counter = 6;
       var countdownBox = document.getElementById("countdownBox");
       var finalBtn = document.getElementById("finalDownloadBox");
